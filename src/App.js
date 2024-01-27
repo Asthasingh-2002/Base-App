@@ -4,11 +4,11 @@ import HomePage from "./components/HomePage/HomePage";
 
 
 function App() {
-  const [isLoggedIn, setisLoggedin]= useState(1);
+  const [isLoggedIn, setisLoggedin]= useState(0);
 
   return (
     <div>
-    {isLoggedIn? <HomePage/>: <Login/> }
+    {isLoggedIn? <HomePage/>: <Login setisLoggedin={setisLoggedin}/> }
    
     
     </div>

@@ -3,7 +3,13 @@ import { FcGoogle } from "react-icons/fc";
 import googleImg from "../../../Assets/google.png";
 import appleImg from "../../../Assets/apple 1.png";
 
-export default function Signin() {
+
+export default function LoginForm({setisLoggedin}) {
+
+  const handleClick=()=>{
+   console.log("hii");
+   setisLoggedin(1);
+  };
   return (
     <div className="flex flex-col justify-start m-10  w-96 ">
       <div className="text-2xl font-bold">Sign In</div>
@@ -37,6 +43,7 @@ export default function Signin() {
           <button
             className="bg-[#605BFF] w-full m-2 text-sm text-white  rounded-md p-1 font-semibold"
             type="submit "
+            onClick={handleClick}
           >
             Sign In
           </button>
