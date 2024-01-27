@@ -1,12 +1,14 @@
 import React from "react";
-import Login from "./components/Login/Login";
-// import "./index.css"
+// import Login from "./components/Login/Login";
+import HomePage from "./components/HomePage/HomePage";
+
 
 function App() {
   return (
     <div className="bg-black">
     
-    <Login/>
+    {/* <Login/> */}
+    <HomePage/>
     </div>
   );
 }
