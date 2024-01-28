@@ -11,7 +11,7 @@ export default function LoginForm({setisLoggedin}) {
    setisLoggedin(1);
   };
   return (
-    <div className=" w-full flex flex-col justify-start p-5 md:m-10  md:w-96">
+    <div className=" w-full flex flex-col justify-start p-5 md:h-50 md:w-96">
       <div className="text-2xl font-bold">Sign In</div>
       <div className="text-sm">Sign in to your account</div>
       <div className=" text-xs md:text-sm mt-5 mb-5 flex justify-between">

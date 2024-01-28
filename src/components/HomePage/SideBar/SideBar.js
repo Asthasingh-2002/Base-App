@@ -14,13 +14,13 @@ export default function SideBar() {
 
   return (
     <>
-      <div className="bg-white h-screen w-64 border-r border-gray-200 hidden md:block">
+      <div className="bg-white h-screen w-64 border-r border-gray-200 hidden md:block p-3">
         <div className="p-4 border-b border-gray-200 flex justify-center ">
           <img src={logo} alt="Logo" className="w-10 h-10 mr-2" />
 
           <h1 className="text-2xl font-semibold text-gray-800 mr-3">Base</h1>
         </div>
-        <nav className="p-4">
+        <nav className="p-4 font-medium">
           <ul>
             <li className="my-10">
               <NavLink
@@ -29,7 +29,7 @@ export default function SideBar() {
                   pathLocation == "/dashboard" ? "text-blue-800" : ""
                 }`}
               >
-                <span className="material-symbols-outlined mr-2">dashboard</span>
+                <span className="material-symbols-outlined mr-2 ">dashboard</span>
                 <span> Dashboard</span>
               </NavLink>
             </li>

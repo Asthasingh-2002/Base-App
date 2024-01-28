@@ -27,7 +27,9 @@ export default function HomePage() {
               element={<Navigate to="/upload"></Navigate>}
             />
             <Route exact path="/upload" element={<Upload />} />
-            <Route path="*" element={<h2>Page not Available</h2>} />
+            <Route path="*" element={<div className="flex  justify-center items-center ">
+              <h1 className="text-4xl font-bold">Page not Available</h1>
+            </div>} />
           </Routes>
         </div>
       </Router>
