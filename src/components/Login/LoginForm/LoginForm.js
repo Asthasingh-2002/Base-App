@@ -7,19 +7,19 @@ import appleImg from "../../../Assets/apple 1.png";
 export default function LoginForm({setisLoggedin}) {
 
   const handleClick=()=>{
-   console.log("hii");
+   
    setisLoggedin(1);
   };
   return (
-    <div className="flex flex-col justify-start m-10  w-96 ">
+    <div className=" w-full flex flex-col justify-start p-5 md:m-10  md:w-96">
       <div className="text-2xl font-bold">Sign In</div>
       <div className="text-sm">Sign in to your account</div>
-      <div className="text-sm mt-5 mb-5 flex justify-between">
-        <button className="w-1/2 bg-white items-center rounded-lg p-1 mr-2 flex justify-center">
+      <div className=" text-xs md:text-sm mt-5 mb-5 flex justify-between">
+        <button className=" w-40 md:w-1/2 bg-white items-center rounded-lg p-1 md:mr-2 flex justify-center">
           <img src={googleImg} alt="Google Icon" className="w-4 h-4 mr-2" />
           Sign in with Google
         </button>
-        <button className="w-1/2 bg-white items-center rounded-lg p-1 ml-2 flex justify-center">
+        <button className="  w-40 md:w-1/2 bg-white items-center rounded-lg p-1 ml-2 flex justify-center">
           <img src={appleImg} alt="Google Icon" className="w-4 h-4 mr-2" />
           Sign in with Apple
         </button>

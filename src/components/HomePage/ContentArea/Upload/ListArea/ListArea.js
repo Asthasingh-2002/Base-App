@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function ListArea({ excelData }) {
-  if (!excelData || excelData.length === 0) {
-    return <div>No data to display</div>;
-  }
+export default function ListArea({ excelData ,setExcelData}) {
+  const [selectedTags, setSelectedTags] = useState({});
 
-  // Extract column headers from the first row
+  const renderTagButton = (e,rowIndex) => {
+    // console.log("Astha",rowIndex);
+    // console.log(excelData[rowIndex-1]);
+    let temp=excelData[rowIndex-1];
+    if(excelData[rowIndex-1].length==4){
+      temp.push(e+',');
+    }
+    let tempExcelData= excelData;
+    excelData[rowIndex-1]=temp;
+    console.log(excelData[rowIndex-1],temp);
+    setExcelData(tempExcelData);
+    
+    
+  };
+
   const columnHeaders = excelData[0];
 
   return (
@@ -26,7 +38,18 @@ export default function ListArea({ excelData }) {
             <tr key={rowIndex} className="bg-white p-5">
               {rowData.map((cellData, cellIndex) => (
                 <td key={cellIndex} className="py-2 px-4 border-b">
-                  {cellData}
+                  {cellIndex === 3 ? (
+                    <>
+                      <select onChange={(e)=>renderTagButton(e.target.value,cellIndex)}>
+                      <option value="" disabled selected>Select an option</option>
+                        {cellData.split(", ").map((data) => (
+                          <option key={data}>{data}</option>
+                        ))}
+                      </select>
+                    </>
+                  ) : (
+                    cellData
+                  )}
                 </td>
               ))}
             </tr>
@@ -36,4 +59,3 @@ export default function ListArea({ excelData }) {
     </div>
   );
 }
-
